@@ -3,13 +3,16 @@ import Login  from './components/login';
 import Register  from './components/register';
 import Addemp from './components/addEmp';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'; 
+import {Provider} from 'react-redux';
+import store from './store';
+
 
 
 
 function App() {
   return ( 
-    
-  <Fragment>
+  <Provider store={store}>  
+    <Fragment>
   <Router>
     <Switch>
   <Route exact path="/" component={Login}></Route>
@@ -18,6 +21,9 @@ function App() {
   </Switch>
   </Router>
   </Fragment>
+  </Provider>
+
+
   );
 }
 
